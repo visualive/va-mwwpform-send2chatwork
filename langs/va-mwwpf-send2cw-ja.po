@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VA MW WP Form send to chatwork\n"
+"POT-Creation-Date: 2017-05-04 06:47+0900\n"
+"PO-Revision-Date: 2017-05-04 06:48+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: send2chatwork.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: incs/functions.php:34
+msgid "chatwork API Key"
+msgstr "チャットワーク API キー"
+
+#: incs/functions.php:35
+msgid ""
+"Issue chatwork API Key <a href=\"https://www.chatwork.com/service/packages/"
+"chatwork/subpackages/api/apply_beta.php\">here</a>."
+msgstr ""
+"チャットワーク API キーの発行は<a href=“https://www.chatwork.com/service/"
+"packages/chatwork/subpackages/api/apply_beta.php”>コチラ</a>。"
+
+#: incs/functions.php:45
+msgid "chatwork Room ID"
+msgstr "チャットワークのルーム ID"
+
+#: incs/functions.php:46
+msgid ""
+"Numeric part of each Room URL (\"#!rid*****\") is Room ID.<br>ex: In case of "
+"\"#!rid12345\" it is 12345."
+msgstr ""
+"ルームURL（“#!rid*****”）の数字部分がルーム ID です。<br>例：「#!rid12345」の"
+"場合は12345です。"
+
+#: incs/functions.php:56
+msgid "Select Form"
+msgstr "フォームを選択"
+
+#: incs/functions.php:62
+msgid "No form has been created."
+msgstr "フォームが作成されていません。"
+
+#: incs/functions.php:69
+msgid "Skip mail transmission to the administrator"
+msgstr "管理者宛のメールを送信しない"
+
+#: incs/functions.php:70
+msgid "It can not be used under \"MW WP Form\" v3.2.0 or lower."
+msgstr "MW WP Form v3.2.0以下では使用できません。"
+
+#: incs/modules/class-admin.php:252
+msgid "Please select"
+msgstr "選択してください"
+
+#: incs/modules/class-send2cw.php:140
+msgid "You've Got Mail."
+msgstr "メールを受信しました。"
+
+#: incs/modules/class-send2cw.php:141
+msgctxt "Sender of mail template."
+msgid "===< Sender >========================"
+msgstr "＝＝＝＜メール送信者＞＝＝＝＝＝＝＝＝＝＝＝"
+
+#: incs/modules/class-send2cw.php:143
+msgctxt "Content of mail template."
+msgid "===< Content >========================"
+msgstr "＝＝＝＜メール本文＞＝＝＝＝＝＝＝＝＝＝＝＝"
+
+#: incs/modules/class-send2cw.php:144
+msgid ""
+"None (There is a possibility that the mail setting for the administrator has "
+"not been set yet)"
+msgstr "本文なし（管理者宛メール設定が未設定な可能性があります）"
+
+#: incs/modules/class-send2cw.php:148
+msgctxt "footer of mail template."
+msgid "===================================="
+msgstr "＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝"
+
+#. Plugin Name of the plugin/theme
+msgid "VA MW WP Form send to chatwork"
+msgstr "VA MW WP Form send to chatwork"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/visualive/va-mwwpform-send2chatwork"
+msgstr "https://github.com/visualive/va-mwwpform-send2chatwork"
+
+#. Description of the plugin/theme
+msgid "Mail sent from \"MW WP Form\" will be forwarded to room of chatwork."
+msgstr ""
+"MW WPフォームから送信されたメールをチャットワークのルームに転送します。"
+
+#. Author of the plugin/theme
+msgid "KUCKLU"
+msgstr "KUCKLU（くっくる）"
+
+#. Author URI of the plugin/theme
+msgid "https://www.visualive.jp/"
+msgstr "https://www.visualive.jp/"
+
+#~ msgid "Sender"
+#~ msgstr "メール送信者"
+
+#~ msgid "Content"
+#~ msgstr "メール本文"

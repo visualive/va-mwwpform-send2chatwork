@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'VA_MWWPF_SEND2CW_FILE', __FILE__ );
 define( 'VA_MWWPF_SEND2CW_PLUGIN_URL', plugin_dir_url( VA_MWWPF_SEND2CW_FILE ) );
 define( 'VA_MWWPF_SEND2CW_PLUGIN_PATH', plugin_dir_path( VA_MWWPF_SEND2CW_FILE ) );
+define( 'VA_MWWPF_SEND2CW_PLUGIN_BASENAME', dirname( plugin_basename( VA_MWWPF_SEND2CW_FILE ) ) );
 define( 'VA_MWWPF_SEND2CW_PLUGIN_DATA', get_file_data( VA_MWWPF_SEND2CW_FILE, array(
 	'version'     => 'Version',
 	'wp_version'  => 'WordPress Version',

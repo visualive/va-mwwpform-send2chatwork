@@ -76,6 +76,7 @@ class Send2cw {
 			$form_id = (int) $this->options['form_id'];
 
 			add_filter( "mwform_admin_mail_mw-wp-form-{$form_id}", array( &$this, 'mwform_admin_mail' ) );
+			add_filter( 'mwform_is_mail_sended', array( &$this, 'mwform_is_mail_sended' ) );
 			add_action( "mwform_before_send_admin_mail_mw-wp-form-{$form_id}", array( &$this, 'mwform_before_send_admin_mail' ) );
 		}
 	}
@@ -93,6 +94,15 @@ class Send2cw {
 		}
 
 		return $mail;
+	}
+
+	/**
+	 * Forcibly set the transmission success flag.
+	 *
+	 * @return bool
+	 */
+	public function mwform_is_mail_sended() {
+		return true;
 	}
 
 	/**
@@ -128,14 +138,14 @@ class Send2cw {
 		$form_id   = (int) $this->options['form_id'];
 		$mwwpform  = get_post_meta( $form_id, 'mw-wp-form' );
 		$subject   = '' !== $mail->subject ? $mail->subject : __( "You've Got Mail.", 'va-mwwpf-send2cw' );
-		$message[] = '===< ' . __( 'Sender', 'va-mwwpf-send2cw' ) . ' >=====================';
+		$message[] = _x( '===< Sender >========================', 'Sender of mail template.', 'va-mwwpf-send2cw' );
 		$message[] = $mail->sender . ' < ' . $mail->from . ' >' . PHP_EOL;
-		$message[] = '===< ' . __( 'Content', 'va-mwwpf-send2cw' ) . ' >====================';
-		$message[] = '' !== $mail->body ? $mail->body : __( 'None (There is a possibility that the mail setting for the administrator has not been set yet)', 'va-mwwpf-send2cw' );
-		$message[] = '================================' . PHP_EOL;
+		$message[] = _x( '===< Content >========================', 'Content of mail template.', 'va-mwwpf-send2cw' );
+		$message[] = '' !== $mail->body ? $mail->body . PHP_EOL : __( 'None (There is a possibility that the mail setting for the administrator has not been set yet)', 'va-mwwpf-send2cw' ) . PHP_EOL;
 
 		if ( isset( $mwwpform[0]['usedb'] ) && 1 === (int) $mwwpform[0]['usedb'] ) {
-			$message[] = admin_url( "/edit.php?post_type=mwf_{$form_id}" );
+			$message[] = _x( '====================================', 'footer of mail template.', 'va-mwwpf-send2cw' ) . PHP_EOL;
+			$message[] = admin_url( "/edit.php?post_type=mwf_{$form_id}" ) . PHP_EOL;
 		}
 
 		$message = sprintf( '[info][title]%s[/title]%s[/info]', $subject, implode( PHP_EOL, $message ) );

@@ -89,8 +89,8 @@ class Admin {
 	 */
 	private function __construct( $settings ) {
 		$this->settings = $settings;
-		$this->options  = get_option( VA_MWWPF_SEND2CW_OPTION_NAME, array() );
 		$this->group    = VA_MWWPF_SEND2CW_PLUGIN_PREFIX . 'settings';
+		$this->options  = get_option( VA_MWWPF_SEND2CW_OPTION_NAME, array() );
 
 		add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
 		add_action( 'admin_init', array( &$this, 'admin_init' ) );
@@ -248,6 +248,8 @@ class Admin {
 				esc_attr( VA_MWWPF_SEND2CW_OPTION_NAME ),
 				esc_attr( $input['name'] )
 			);
+
+			$output .= '<option>' . __( 'Please select', 'va-mwwpf-send2cw' ) . '</option>';
 
 			while ( $query->have_posts() ) : $query->the_post();
 				$output .= sprintf(
