@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	'fields' => array(
 		'api_key'   => array(
 			'label'         => __( 'chatwork API Key', 'va-mwwpf-send2cw' ),
-			'description'   => '',
+			'description'   => 'Issue chatwork API Key <a href="https://www.chatwork.com/service/packages/chatwork/subpackages/api/apply_beta.php">here</a>.',
 			'name'          => 'api_key',
 			'input'         => array(
 				'type'          => 'text',
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		),
 		'room_id'   => array(
 			'label'         => __( 'chatwork Room ID', 'va-mwwpf-send2cw' ),
-			'description'   => '',
+			'description'   => 'Numeric part of "#!rid*****" of each Room URL is Room ID.<br>ex: In case of "#!rid12345" it is 12345.',
 			'name'          => 'room_id',
 			'input'         => array(
 				'type'          => 'text',
