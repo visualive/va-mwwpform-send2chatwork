@@ -21,3 +21,37 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+define( 'VA_MWWPF_SEND2CW_FILE', __FILE__ );
+define( 'VA_MWWPF_SEND2CW_PLUGIN_URL', plugin_dir_url( VA_MWWPF_SEND2CW_FILE ) );
+define( 'VA_MWWPF_SEND2CW_PLUGIN_PATH', plugin_dir_path( VA_MWWPF_SEND2CW_FILE ) );
+define( 'VA_MWWPF_SEND2CW_PLUGIN_DATA', get_file_data( VA_MWWPF_SEND2CW_FILE, array(
+	'version'     => 'Version',
+	'wp_version'  => 'WordPress Version',
+	'php_version' => 'PHP Version',
+	'db_version'  => 'DB Version',
+	'prefix'      => 'Prefix',
+	'network'     => 'Network',
+) ) );
+define( 'VA_MWWPF_SEND2CW_PLUGIN_PREFIX', 'vamwwpfsend2cw_' );
+define( 'VA_MWWPF_SEND2CW_OPTION_NAME', 'va_mwwpf_send2cw' );
+
+/**
+ * Auto loader.
+ *
+ * @since 1.0.0
+ */
+spl_autoload_register( function ( $class ) {
+	$slug = preg_replace( '/^\\VAMWWPFSEND2CW/', '', $class );
+	$slug = str_replace( '\\', '/', $slug );
+	$slug = str_replace( '_', '-', $slug );
+	$slug = strtolower( $slug );
+	$slug = trim( $slug, '/' );
+	$slug = preg_replace( '/[^\/]+$/', 'class-$0', $slug );
+	$path = dirname( VA_MWWPF_SEND2CW_FILE ) . "/incs/{$slug}.php";
+
+	if ( file_exists( $path ) ) {
+		require_once( $path );
+	}
+} );
+require_once dirname( VA_MWWPF_SEND2CW_FILE ) . '/incs/functions.php';
