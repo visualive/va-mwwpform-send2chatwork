@@ -4,8 +4,8 @@
  * Plugin URI: https://github.com/visualive/va-mwwpform-send2chatwork
  * Description: Mail sent from "MW WP Form" will be forwarded to room of chatwork.
  * Author: KUCKLU
- * Version: 1.0.0
- * Author URI: https://www.visualive.jp/
+ * Version: 1.0.1
+ * Author URI: https://www.visualive.jp
  * Text Domain: va-mwwpf-send2cw
  * Domain Path: /langs
  * License: GNU General Public License v3.0
