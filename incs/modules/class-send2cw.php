@@ -120,6 +120,7 @@ class Send2cw {
 			),
 			'body'    => array(
 				'body' => $message,
+				'self_unread' => 1,
 			),
 		);
 
